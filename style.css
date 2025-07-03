@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(135deg, #000000 0%, #111b25 100%);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00ffe744 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveGrid 20s linear infinite;
+  opacity: 0.06;
+  z-index: 0;
+}
+
+@keyframes moveGrid {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px);
+  }
+}
+
+.quiz-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px #00ffe7;
+  width: 360px;
+  text-align: center;
+  border: 2px solid #00ffe7;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #00ffe7;
+  text-shadow: 0 0 10px #00ffe7;
+}
+
+#question {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #111;
+  border-radius: 10px;
+  border: 1px solid #00ffe7;
+  box-shadow: 0 0 8px #00ffe7;
+}
+
+.option {
+  margin: 10px 0;
+  padding: 12px;
+  background: #1e1e1e;
+  border: 1px solid #00ffe7;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: white;
+}
+
+.option:hover {
+  background: #00ffe7;
+  color: black;
+  font-weight: bold;
+  transform: scale(1.03);
+}
+
+.correct {
+  background: #00ff7f !important;
+  color: black;
+}
+
+.wrong {
+  background: #ff4d4d !important;
+  color: white;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #00ffe7;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #00cfc2;
+  transform: scale(1.05);
+}
+
+#score-box {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #00ffe7;
+  text-shadow: 0 0 5px #00ffe7;
+}
